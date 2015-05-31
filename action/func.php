@@ -27,9 +27,8 @@
         }   
         
         function conn_close(){
-            
+            mysql_close();
         }
-        
              
     }            
 
@@ -96,6 +95,7 @@
             $result = mysql_query($sql) or die("not request to DB");
             echo $hdr_success;
             return $result;
+            ConnToDb::conn_close();
         };}
 
 function authorisation(){ // авторизация клиента
