@@ -1,0 +1,41 @@
+body{ background: #87CEFA; font-family: arial; color: darkslategray;}
+a { color: #000; text-decoration: none;}  
+a:hover {text-decoration:none; color:#000;}
+#top {text-align: right; color: #000; height: 28px;}
+#forms, #forms_log { width: 60%; text-align: center; margin: auto; }
+#forms_log {padding-top: 15%;}
+table {margin: auto;}
+td.log_f { width: 30%;}
+#log {padding-top: 10px;}
+h1 {text-align: center; padding-top: 100px;}
+#err {text-align: center; padding-top: 100px;}
+#site {text-align: left; padding-left: 10px;} 
+/**************** божеский вид ****************************/
+#log_f td {position:relative;}
+span.error {background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 8px 14px -12px #444;
+    color: red;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0 0 0 8px;
+    opacity: 0.8;
+    position: absolute;
+    right: 0;
+    top: -58px;
+    width: 100%;
+    z-index: 9999;}
+
+#forms  input.feeld, #forms textarea, .select {border: 1px solid #888;
+    border-radius: 2px; width: 160px;
+    box-shadow: 2px 3px 4px -4px #444 inset;
+    padding: 8px 16px;}	
+#forms	textarea {max-height: 200px; height: 48px;
+    max-width: 160px;
+    min-width: 160px;}
+#forms  input.feeld {text-align: center;}
+#span_nik {}
+input.reg, .file {box-shadow: none !important;
+    cursor: pointer;
+    margin: 8px 0 0;}
+input.reg:hover {}
