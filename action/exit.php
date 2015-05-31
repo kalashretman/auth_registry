@@ -1,5 +1,5 @@
 <?
-    // скрипт разлогинивания юзера/удаление сессии
+    // User logout
     session_start();
     if (isset($_POST['logout'])){
         unset($_SESSION['id']);

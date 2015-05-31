@@ -1,35 +1,35 @@
-<? 
-    session_start(); 
-    require_once "/sata1/home/users/vunderkin/www/test.webshops.club/action/func.php";
+<?
+session_start();
+require_once "Z:/home/test.webshops.club/www/action/func.php";
 ?>
 <!DOCTYPE html>
-    <html>
-    <head>  
-        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+<html>
+<head>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
 
-        <script src="/js/code.js"></script>
-    </head>
-    <body>   
-        <div id="top">
-            <? top(); ?>
-        </div>  
-        <div id="forms">
-        <div id="lang">
-            <a href="http://test.webshops.club/action/registr-en.php">en</a>|<a href="http://test.webshops.club/action/registr.php">ru</a>
-        </div>
-         
-        <h3>Введите информацию о себе для регистрации</h3><br />
-        
-        <form name = "nf" method = "post" onsubmit='return validate()'
-                action = "http://test.webshops.club/action/auth.php" enctype="multipart/form-data">
-                
-         <table id="log_f">
+    <script src="/js/code.js"></script>
+</head>
+<body>
+<div id="top">
+    <? top(); ?>
+</div>
+<div id="forms">
+    <div id="lang">
+        <a href="http://test.webshops.club/action/registr-en.php">en</a>|<a href="http://test.webshops.club/action/registr.php">ru</a>
+    </div>
+
+    <h3>Р’РІРµРґРёС‚Рµ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЃРµР±Рµ РґР»СЏ СЂРµРіРёСЃС‚СЂР°С†РёРё</h3><br />
+
+    <form name = "nf" method = "post" onsubmit='return validate()'
+          action = "http://test.webshops.club/action/auth.php" enctype="multipart/form-data">
+
+        <table id="log_f">
             <tr>
                 <td>
-                    Ваш ник на сайте: 
+                    Р’Р°С€ РЅРёРє РЅР° СЃР°Р№С‚Рµ:
                 </td>
                 <td>
-                    Ваша почта:
+                    Р’Р°С€Р° РїРѕС‡С‚Р°:
                 </td>
             </tr>
             <tr>
@@ -44,34 +44,34 @@
             </tr>
             <tr>
                 <td>
-                    Введите пароль:
+                    Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ:
                 </td>
-                <td>   
-                    Введите пароль ещё раз:
+                <td>
+                    Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ РµС‰С‘ СЂР°Р·:
                 </td>
             </tr>
             <tr>
-                <td> 
+                <td>
                     <input class="feeld" name="pass" type="password" maxlength="25" onclick="writeSpanPass()" onblur="cleanSpanPass()"/>
                     <span class="error" id="span_pass"></span>
                 </td>
-                <td>  
+                <td>
                     <input class="feeld" name="pass1" type="password" maxlength="25" onclick="writeSpanPass1()" onblur="cleanSpanPass1()"/>
                     <span class="error" id="span_pass1"></span>
                 </td>
             </tr>
             <tr>
                 <td>
-                    ФИО:
+                    Р¤РРћ:
                 </td>
                 <td>
-                    Дата рождения:
+                    Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ:
                 </td>
             </tr>
             <tr>
                 <td>
                     <input class="feeld" name="name" type="text" maxlength="25" onclick="writeSpanName()" onblur="cleanSpanName()"/>
-                    <span class="error" id="span_name"></span>   
+                    <span class="error" id="span_name"></span>
                 </td>
                 <td>
                     <input class="feeld" name="birth" type="date" maxlength="25"/>
@@ -79,32 +79,32 @@
             </tr>
             <tr>
                 <td>
-                    Страна проживания:
+                    РЎС‚СЂР°РЅР° РїСЂРѕР¶РёРІР°РЅРёСЏ:
                 </td>
                 <td>
-                    Пол:
+                    РџРѕР»:
                 </td>
             </tr>
             <tr>
                 <td>
                     <select class="select" name="city">
-                        <option>Украина</option>
-                        <option>Казахстан</option>
-                        <option>Росиия</option>
-                        <option>Белорусия</option>
-                    </select> 
+                        <option>РЈРєСЂР°РёРЅР°</option>
+                        <option>РљР°Р·Р°С…СЃС‚Р°РЅ</option>
+                        <option>Р РѕСЃРёРёСЏ</option>
+                        <option>Р‘РµР»РѕСЂСѓСЃРёСЏ</option>
+                    </select>
                 </td>
                 <td>
-                    <input class="radio" name="sex" type="radio" value="sex1"/> М
-                    <input class="radio" name="sex" type="radio" value="sex2"/> Ж
+                    <input class="radio" name="sex" type="radio" value="sex1"/> Рњ
+                    <input class="radio" name="sex" type="radio" value="sex2"/> Р–
                 </td>
             </tr>
             <tr>
                 <td>
-                    Образование:
+                    РћР±СЂР°Р·РѕРІР°РЅРёРµ:
                 </td>
                 <td>
-                    Контакты:
+                    РљРѕРЅС‚Р°РєС‚С‹:
                 </td>
             </tr>
             <tr>
@@ -118,11 +118,11 @@
                 </td>
             </tr>
             <tr>
-                <td>      
-                    Опыт работы:
+                <td>
+                    РћРїС‹С‚ СЂР°Р±РѕС‚С‹:
                 </td>
                 <td>
-                    Дополнительные сведения о себе:
+                    Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ СЃРІРµРґРµРЅРёСЏ Рѕ СЃРµР±Рµ:
                 </td>
             </tr>
             <tr>
@@ -137,22 +137,22 @@
             </tr>
             <tr>
                 <td>
-                    Ваше фото:
+                    Р’Р°С€Рµ С„РѕС‚Рѕ:
                 </td>
                 <td>
                     <input class="file" name="filename" type="file"/>
                 </td>
             </tr>
-  
+
             <tr>
                 <td>
                 </td>
                 <td>
-                    <input class="reg" type="submit" name="login" value="Зарегистрироваться"/>
+                    <input class="reg" type="submit" name="login" value="Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ"/>
                 </td>
-            </tr> 
+            </tr>
         </table>
-        </form>
-        </div>
-    </body>
+    </form>
+</div>
+</body>
 </html>

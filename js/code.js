@@ -1,19 +1,19 @@
-// Проверка формы авторизации 
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 function checkForm(form){
     if (! (/^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/.test(nameForm.mail.value))){
-        alert("Проверьте правильность почты");
+        alert("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ");
         nameForm.mail.focus();
         return false;};        
     if (nameForm.pass.value.length < 4){
-        alert("parol меньше 5 символов");
+        alert("parol пїЅпїЅпїЅпїЅпїЅпїЅ 5 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
         nameForm.pass.focus();
         return false;};   
     if (! (/^[a-zA-Z0-9_\-\!]+$/.test(nameForm.pass.value))){
-        alert("Пароль должен состоять из букв, цифр, знаков '_', '-', '!'");
+        alert("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ '_', '-', '!'");
         nameForm.pass.focus();
         return false;};     
     return true;}
-// Проверка формы регистрации 
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 function validate(){    
     var fnik = document.forms["nf"]["nik"].value;
     var fmail = document.forms["nf"]["email"].value;
@@ -24,59 +24,59 @@ function validate(){
     var fcontacts = document.forms["nf"]["contacts"].value;
     var fexperience = document.forms["nf"]["experience"].value;
     var fabout = document.forms["nf"]["about"].value;
-    if (!(/^[а-яА-Яa-zA-Z0-9]+$/).test(fnik)){
-        alert("Nik должно состоять только из букв");
+    if (!(/^[пїЅ-пїЅпїЅ-пїЅa-zA-Z0-9]+$/).test(fnik)){
+        alert("Nik пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ");
         document.forms["nf"]["nik"].focus();
         return false;};
     if (!(/^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/.test(fmail))){
-        alert("Введен некорректный емейл");
+        alert("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ");
         document.forms["nf"]["email"].focus();
         return false;};                     
     if (fpass != fpass1){
-        alert("Не совпадают пароли. Ведите пароли ещё раз");
+        alert("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ");
         document.forms["nf"]["pass"].focus();
         return false;};        
-    if (!(/^[а-яА-Яa-zA-Z]+$/).test(fname)){
-        alert("ФИО должно состоять только из букв");
+    if (!(/^[пїЅ-пїЅпїЅ-пїЅa-zA-Z]+$/).test(fname)){
+        alert("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ");
         document.forms["nf"]["name"].focus();
         return false;};        
-    if (!(/^[а-яА-Яa-zA-Z0-9]+$/).test(feducation)){
-        alert("Вы можете вводить буквы, цифры, '.' и ','");
+    if (!(/^[пїЅ-пїЅпїЅ-пїЅa-zA-Z0-9]+$/).test(feducation)){
+        alert("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ, '.' пїЅ ','");
         document.forms["nf"]["education"].focus();
         return false;};         
-    if (!(/^[@ \.,а-яА-Яa-zA-Z0-9]+$/).test(fcontacts)){
-        alert("Вы можете вводить буквы, цифры, '.' и ','");
+    if (!(/^[@ \.,пїЅ-пїЅпїЅ-пїЅa-zA-Z0-9]+$/).test(fcontacts)){
+        alert("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ, '.' пїЅ ','");
         document.forms["nf"]["contacts"].focus();
         return false;};         
-    if (!(/^[а-яА-Яa-zA-Z0-9]+$/).test(fexperience)){
-        alert("Вы можете вводить буквы, цифры, '.' и ','");
+    if (!(/^[пїЅ-пїЅпїЅ-пїЅa-zA-Z0-9]+$/).test(fexperience)){
+        alert("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ, '.' пїЅ ','");
         document.forms["nf"]["experience"].focus();
         return false;};         
-    if (!(/^[а-яА-Яa-zA-Z0-9_\-\!\\\.\,]+$/).test(fabout)){
-        alert("Вы можете вводить буквы, цифры, '.' и ','");
+    if (!(/^[пїЅ-пїЅпїЅ-пїЅa-zA-Z0-9_\-\!\\\.\,]+$/).test(fabout)){
+        alert("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ, '.' пїЅ ','");
         document.forms["nf"]["about"].focus();
         return false;}        
     return true;}
-// выведение подсказок при регистрации нового пользователя(русский язык) 
-function writeSpanNik(){document.getElementById("span_nik").innerHTML = "<br/>Nik должен состоять только из букв и цифр";}
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ(пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ) 
+function writeSpanNik(){document.getElementById("span_nik").innerHTML = "<br/>Nik пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ";}
 function cleanSpanNik(){document.getElementById("span_nik").innerHTML = "";} 
-function writeSpanEmail(){document.getElementById("span_email").innerHTML = "<br/>Email должен состоять только из букв и цифр";}
+function writeSpanEmail(){document.getElementById("span_email").innerHTML = "<br/>Email пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ";}
 function cleanSpanEmail(){document.getElementById("span_email").innerHTML = "";}
-function writeSpanPass(){document.getElementById("span_pass").innerHTML = "<br/>Пароль должен быть не менее 6 знаков";}
+function writeSpanPass(){document.getElementById("span_pass").innerHTML = "<br/>пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 6 пїЅпїЅпїЅпїЅпїЅпїЅ";}
 function cleanSpanPass(){document.getElementById("span_pass").innerHTML = "";}
-function writeSpanPass1(){document.getElementById("span_pass1").innerHTML = "<br/>Введите пароль ещё раз";}
+function writeSpanPass1(){document.getElementById("span_pass1").innerHTML = "<br/>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ";}
 function cleanSpanPass1(){document.getElementById("span_pass1").innerHTML = "";}
-function writeSpanName(){document.getElementById("span_name").innerHTML = "<br/>ФИО должно состоять только из букв";}
+function writeSpanName(){document.getElementById("span_name").innerHTML = "<br/>пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ";}
 function cleanSpanName(){document.getElementById("span_name").innerHTML = "";} 
-function writeSpanEduc(){document.getElementById("span_educ").innerHTML = "<br/>Укажмте, где вы учились, какие курсы проходили";}
+function writeSpanEduc(){document.getElementById("span_educ").innerHTML = "<br/>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";}
 function cleanSpanEduc(){document.getElementById("span_educ").innerHTML = "";} 
-function writeSpanContacts(){document.getElementById("span_contacts").innerHTML = "<br/>Укажите Ваши телефоны, e-mail, skype, ICQ, страничка в VK";}
+function writeSpanContacts(){document.getElementById("span_contacts").innerHTML = "<br/>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, e-mail, skype, ICQ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ VK";}
 function cleanSpanContacts(){document.getElementById("span_contacts").innerHTML = "";}
-function writeSpanExp(){document.getElementById("span_exp").innerHTML = "<br/>Последние места Вашей работы";}
+function writeSpanExp(){document.getElementById("span_exp").innerHTML = "<br/>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ";}
 function cleanSpanExp(){document.getElementById("span_exp").innerHTML = "";} 
-function writeSpanAbout(){document.getElementById("span_about").innerHTML = "<br/>Напишите немного о Вас, Ваши интересы, хобби, достижения.";}
+function writeSpanAbout(){document.getElementById("span_about").innerHTML = "<br/>пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.";}
 function cleanSpanAbout(){document.getElementById("span_about").innerHTML = "";} 
-// выведение подсказок при регистрации нового пользователя(английский язык) 
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ(пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ) 
 function writeSpanNik(){document.getElementById("span_nik_en").innerHTML = "<br/>Nick must contains only letters and numbers";}
 function cleanSpanNik(){document.getElementById("span_nik_en").innerHTML = "";} 
 function writeSpanEmail(){document.getElementById("span_email_en").innerHTML = "<br/>Email must contains only letters and numbers";}
@@ -86,12 +86,12 @@ function cleanSpanPass(){document.getElementById("span_pass_en").innerHTML = "";
 function writeSpanPass1(){document.getElementById("span_pass1_en").innerHTML = "<br/>Enter your password again";}
 function cleanSpanPass1(){document.getElementById("span_pass1_en").innerHTML = "";}
 function writeSpanName(){document.getElementById("span_name_en").innerHTML = "<br/>Name must contains only letters";}
-function cleanSpanName(){document.getElementById("span_name_en").innerHTML = "";} 
+function cleanSpanName(){document.getElementById("span_name_en").innerHTML = "";}
 function writeSpanEduc(){document.getElementById("span_educ_en").innerHTML = "<br/>Type where you studied, which courses you studied";}
-function cleanSpanEduc(){document.getElementById("span_educ_en").innerHTML = "";} 
+function cleanSpanEduc(){document.getElementById("span_educ_en").innerHTML = "";}
 function writeSpanContacts(){document.getElementById("span_contacts_en").innerHTML = "<br/>Type your phones, e-mail, skype, ICQ, VK profile";}
 function cleanSpanContacts(){document.getElementById("span_contacts_en").innerHTML = "";}
 function writeSpanExp(){document.getElementById("span_exp_en").innerHTML = "<br/>Last places of work";}
-function cleanSpanExp(){document.getElementById("span_exp_en").innerHTML = "";} 
+function cleanSpanExp(){document.getElementById("span_exp_en").innerHTML = "";}
 function writeSpanAbout(){document.getElementById("span_about_en").innerHTML = "<br/>Write about you, your interests, hobbies, achievements";}
 function cleanSpanAbout(){document.getElementById("span_about_en").innerHTML = "";}

@@ -1,32 +1,32 @@
-<? 
-    session_start(); 
-    require_once "/sata1/home/users/vunderkin/www/test.webshops.club/action/func.php";
+<?
+session_start();
+require_once "Z:/home/test.webshops.club/www/action/func.php";
 ?>
 <!DOCTYPE html>
-    <html>
-    <head>  
-        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+<html>
+<head>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
 
-        <script src="/js/code.js"></script>
-    </head>
-    <body>   
-        <div id="top">
-            <? top(); ?>
-        </div>  
-        <div id="forms">
-        <div id="lang">
-            <a href="http://test.webshops.club/action/registr-en.php">en</a>|<a href="http://test.webshops.club/action/registr.php">ru</a>
-        </div>
-         
-        <h3>Please, write  about yourself for Sing Up</h3><br />
-        
-        <form name = "nf" method = "post" onsubmit='return validate()'
-                action = "http://test.webshops.club/action/auth.php" enctype="multipart/form-data">
-                
-         <table id="log_f">
+    <script src="/js/code.js"></script>
+</head>
+<body>
+<div id="top">
+    <? top(); ?>
+</div>
+<div id="forms">
+    <div id="lang">
+        <a href="http://test.webshops.club/action/registr-en.php">en</a>|<a href="http://test.webshops.club/action/registr.php">ru</a>
+    </div>
+
+    <h3>Please, write  about yourself for Sing Up</h3><br />
+
+    <form name = "nf" method = "post" onsubmit='return validate()'
+          action = "http://test.webshops.club/action/auth.php" enctype="multipart/form-data">
+
+        <table id="log_f">
             <tr>
                 <td>
-                    Your Nik: 
+                    Your Nik:
                 </td>
                 <td>
                     Your Email:
@@ -46,16 +46,16 @@
                 <td>
                     Type password:
                 </td>
-                <td>   
+                <td>
                     Type password again:
                 </td>
             </tr>
             <tr>
-                <td> 
+                <td>
                     <input class="feeld" name="pass" type="password" maxlength="25" onclick="writeSpanPass()" onblur="cleanSpanPass()"/>
                     <span class="error" id="span_pass_en"></span>
                 </td>
-                <td>  
+                <td>
                     <input class="feeld" name="pass1" type="password" maxlength="25" onclick="writeSpanPass1()" onblur="cleanSpanPass1()"/>
                     <span class="error" id="span_pass1_en"></span>
                 </td>
@@ -71,7 +71,7 @@
             <tr>
                 <td>
                     <input class="feeld" name="name" type="text" maxlength="25" onclick="writeSpanName()" onblur="cleanSpanName()"/>
-                    <span class="error" id="span_name_en"></span>   
+                    <span class="error" id="span_name_en"></span>
                 </td>
                 <td>
                     <input class="feeld" name="birth" type="date" maxlength="25"/>
@@ -92,7 +92,7 @@
                         <option>Kazakhstan</option>
                         <option>Russia</option>
                         <option>Belorussia</option>
-                    </select> 
+                    </select>
                 </td>
                 <td>
                     <input class="radio" name="sex" type="radio" value="sex1"/> M
@@ -118,7 +118,7 @@
                 </td>
             </tr>
             <tr>
-                <td>      
+                <td>
                     Experience:
                 </td>
                 <td>
@@ -143,16 +143,16 @@
                     <input class="file" name="filename" type="file"/>
                 </td>
             </tr>
-  
+
             <tr>
                 <td>
                 </td>
                 <td>
                     <input class="reg" type="submit" name="login" value="Sing Up"/>
                 </td>
-            </tr> 
+            </tr>
         </table>
-        </form>
-        </div>
-    </body>
+    </form>
+</div>
+</body>
 </html>

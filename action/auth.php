@@ -1,5 +1,5 @@
 <?
-    //добавление нового пользователя
-    require_once "/sata1/home/users/vunderkin/www/test.webshops.club/action/func.php";
+    //now add new user to DB
+    require_once "Z:/home/test.webshops.club/www/action/func.php";
     add_user();  
 ?>

@@ -1,14 +1,14 @@
-<?  // шапка сайта - проверка авторизован ли клиент или нет
+<?
     function top(){
-        if (!isset($_SESSION['indef'])){ //если клиент не авторизован, предлагается ссылка на вход или регистрацию
-            echo "<a id=\"log\" href=\"http://test.webshops.club/action/login.php\">Вход</a>
-            <a id=\"reg\" href=\"http://test.webshops.club/action/registr.php\">Регистрация</a>
-            <div id = \"site\"><a href=\"http://test.webshops.club\">Наш сайт</a></div>";}
-        else { //если клиент автороизован, то выводится приветствие и кнопка выхода
-            echo "Приветствую, ".$_SESSION['indef'].
+        if (!isset($_SESSION['indef'])){
+            echo "<a id=\"log\" href=\"http://test.webshops.club/action/login.php\">login</a>
+            <a id=\"reg\" href=\"http://test.webshops.club/action/registr.php\">registration</a>
+            <div id = \"site\"><a href=\"http://test.webshops.club\">our site</a></div>";}
+        else {
+            echo "hello, dear ".$_SESSION['indef'].
                  "<form action=\"http://test.webshops.club/action/exit.php\" method=\"post\">
-                 <input type = \"submit\" name = \"logout\" value = \"Выход\">
-                 <div id = \"site\"><a href=\"http://test.webshops.club\">Наш сайт</a></div>";}}
+                 <input type = \"submit\" name = \"logout\" value = \"logout\">
+                 <div id = \"site\"><a href=\"http://test.webshops.club\">пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ</a></div>";}}
 
     class ConnToDb{
         var $user;
@@ -33,7 +33,7 @@
              
     }            
 
-    function connect_to_db(){ //подключение к базе данных
+    function connect_to_db(){ //connect to dataBase
         $user = "vunderkin_shop";
 		$pass = "p7m6f2Cuf";
 		$host = "db14.freehost.com.ua";
@@ -42,7 +42,7 @@
 		$link = mysql_connect($host, $user, $pass) or die("no connect with DB");
 		mysql_select_db($db, $link) or die("not select DB");}
         
-    function add_user(){ //регистрация нового юзера
+    function add_user(){ //add to DB new user
         ConnToDb::conn_open();
         $name = trim($_POST["name"]);
         $nik = trim($_POST["nik"]);
@@ -52,147 +52,151 @@
         $birth = $_POST["birth"];
         $city = $_POST["city"];
         $sex = $_POST["sex"];
-  // удаляем возможность введения сриптов
+
+  // checking text before use
+
         $education = htmlspecialchars($_POST["education"]);
         $experience = htmlspecialchars($_POST["experience"]);
         $contacts = htmlspecialchars($_POST["contacts"]);
         $about = htmlspecialchars($_POST["about"]);
- // проводим валидацию почты, паролей, картинки       
+
+ // checking words by regular expression
+
         $check_email = preg_match("|^[-a-z0-9_]+@[-0-9a-z^\.]+\.[a-z]{2,6}$|i", $_POST['email']);
         $check_pass = preg_match("|^[-_0-9a-z!]|i", $pass);
         $types = array('image/gif', 'image/png', 'image/jpeg', 'image/jpg');
         $infoimg = @getimagesize($_FILES['filename']['tmp_name']);
         
         $hdr_err_bgn = "<html><head><link href=\"/css/style.css\" rel=\"stylesheet\" type=\"text/css\" />
-                          </head><body><div id=\"err\">";       
-        $hdr_err_end = "<br/><br/><a href=\"http://test.webshops.club/action/registr.php\">Пробовать ещё раз!</a></div></body></html>"; 
-        $hdr_err_email = "Некорректно введен емейл. Пробуйте ввести ещё раз";
-        $hdr_err_pass = "Пароли не совпалают. Пробуйте ввести ещё раз";         
-        $hdr_err_chck_pass = "Пароль должен состоять из букв, цифр, знаков '_', '-', '!'";   
-        $hdr_err_file = "Недопустимый тип файла. Допустимо загружать только изображения: *.gif, *.png, *.jpg'";  
-        $hdr_err_size = "Необходимо загружать картинку не более 640*480"; 
+                          </head><body><div id=\"err\">";
+        $hdr_err_end = "<br/><br/><a href=\"http://test.webshops.club/action/registr.php\">РџСЂРѕР±РѕРІР°С‚СЊ РµС‰С‘ СЂР°Р·!</a></div></body></html>";
+        $hdr_err_email = "РќРµРєРѕСЂСЂРµРєС‚РЅРѕ РІРІРµРґРµРЅ РµРјРµР№Р». РџСЂРѕР±СѓР№С‚Рµ РІРІРµСЃС‚Рё РµС‰С‘ СЂР°Р·";
+        $hdr_err_pass = "РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°Р»Р°СЋС‚. РџСЂРѕР±СѓР№С‚Рµ РІРІРµСЃС‚Рё РµС‰С‘ СЂР°Р·";
+        $hdr_err_chck_pass = "РџР°СЂРѕР»СЊ РґРѕР»Р¶РµРЅ СЃРѕСЃС‚РѕСЏС‚СЊ РёР· Р±СѓРєРІ, С†РёС„СЂ, Р·РЅР°РєРѕРІ '_', '-', '!'";
+        $hdr_err_file = "РќРµРґРѕРїСѓСЃС‚РёРјС‹Р№ С‚РёРї С„Р°Р№Р»Р°. Р”РѕРїСѓСЃС‚РёРјРѕ Р·Р°РіСЂСѓР¶Р°С‚СЊ С‚РѕР»СЊРєРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ: *.gif, *.png, *.jpg'";
+        $hdr_err_size = "РќРµРѕР±С…РѕРґРёРјРѕ Р·Р°РіСЂСѓР¶Р°С‚СЊ РєР°СЂС‚РёРЅРєСѓ РЅРµ Р±РѕР»РµРµ 640*480";
         $hdr_success = "<html><head><link href=\"/css/style.css\" rel=\"stylesheet\" type=\"text/css\"/>
-                        </head><body><div id=\"err\">Поздравляем с регистрацией!!!<br/><br/>
-                          <a href=\"http://test.webshops.club/action/login.php\">Вход!</a></div></body></html>";
-                                                                            
-        if ($check_email != 1){echo($hdr_err_bgn.$hdr_err_email.$hdr_err_end);}            
-        elseif ($pass != $pass1){echo($hdr_err_bgn.$hdr_err_pass.$hdr_err_end);}            
-        elseif ($check_pass != 1){echo($hdr_err_bgn.$hdr_err_chck_pass.$hdr_err_end);}            
-        elseif (!in_array($_FILES['filename']['type'], $types)){echo($hdr_err_bgn.$hdr_err_file.$hdr_err_end);}            
-    	elseif ($infoimg[0] > 640 || $infoimg[1] > 480){echo($hdr_err_bgn.$hdr_err_size.$hdr_err_end);}
- // при успешной валидации проводим загрузку файла на сервер и запись данных в БД
-        else {  
-          	$file = md5($mail).rand(999,100000);
+                        </head><body><div id=\"err\">РџРѕР·РґСЂР°РІР»СЏРµРј СЃ СЂРµРіРёСЃС‚СЂР°С†РёРµР№!!!<br/><br/>
+                          <a href=\"http://test.webshops.club/action/login.php\">Р’С…РѕРґ!</a></div></body></html>";
+
+        if ($check_email != 1){echo($hdr_err_bgn.$hdr_err_email.$hdr_err_end);}
+        elseif ($pass != $pass1){echo($hdr_err_bgn.$hdr_err_pass.$hdr_err_end);}
+        elseif ($check_pass != 1){echo($hdr_err_bgn.$hdr_err_chck_pass.$hdr_err_end);}
+        elseif (!in_array($_FILES['filename']['type'], $types)){echo($hdr_err_bgn.$hdr_err_file.$hdr_err_end);}
+        elseif ($infoimg[0] > 640 || $infoimg[1] > 480){echo($hdr_err_bgn.$hdr_err_size.$hdr_err_end);}
+        // РїСЂРё СѓСЃРїРµС€РЅРѕР№ РІР°Р»РёРґР°С†РёРё РїСЂРѕРІРѕРґРёРј Р·Р°РіСЂСѓР·РєСѓ С„Р°Р№Р»Р° РЅР° СЃРµСЂРІРµСЂ Рё Р·Р°РїРёСЃСЊ РґР°РЅРЅС‹С… РІ Р‘Р”
+        else {
+            $file = md5($mail).rand(999,100000);
             $filename = "/sata1/home/users/vunderkin/www/test.webshops.club/images/upload/".$file.".jpg";
-                           
-          	move_uploaded_file($_FILES["filename"]["tmp_name"], $filename);
-	
+
+            move_uploaded_file($_FILES["filename"]["tmp_name"], $filename);
+
             $sql = "INSERT INTO test (id, nik, name, email, birth, city, sex, education, experience, contacts, about, file, pass)
                     VALUES ('', '$nik', '$name', '$email', '$birth', '$city', '$sex', '$education', '$experience', '$contacts', '$about', '$file', '$pass')";
-           	$result = mysql_query($sql) or die("not request to DB");				
-           	echo $hdr_success;
+            $result = mysql_query($sql) or die("not request to DB");
+            echo $hdr_success;
             return $result;
-        };}  
+        };}
 
-    function authorisation(){ // авторизация клиента
-        connect_to_db();
-        
-        $user = $_POST['mail'];
-        $pass = md5($_POST['pass']);
-        
-        $sql = "SELECT * FROM test WHERE email = '$user'";
-        $res = mysql_query($sql) or die("Upss");
-        $result = mysql_fetch_assoc($res);
-        if ($result['pass'] == $pass){
-            $_SESSION['indef'] = $result['nik'];
-            $_SESSION['name'] = $result['id'];
-            header("Location: http://test.webshops.club");}    
-        else{
-            echo "<html><head><link href=\"/css/style.css\" rel=\"stylesheet\" type=\"text/css\"/>
-                        </head><body><div id=\"err\">Такой логин с паролем не найдены. Авторизуйтесь.<br/><br/>
-                          <a href=\"http://test.webshops.club/action/login.php\">Вернуться</a></div></body></html>";}} 
-  
-    function get_user(){ //выводим данные авторизованного клиента 
-        connect_to_db();
-        $user = $_SESSION['name'];
-        $sql = "SELECT * FROM test WHERE id = '$user'";
-        $res = mysql_query($sql) or die("Upss");
-        $result = mysql_fetch_assoc($res);
-        echo("
+function authorisation(){ // Р°РІС‚РѕСЂРёР·Р°С†РёСЏ РєР»РёРµРЅС‚Р°
+    connect_to_db();
+
+    $user = $_POST['mail'];
+    $pass = md5($_POST['pass']);
+
+    $sql = "SELECT * FROM test WHERE email = '$user'";
+    $res = mysql_query($sql) or die("Upss");
+    $result = mysql_fetch_assoc($res);
+    if ($result['pass'] == $pass){
+        $_SESSION['indef'] = $result['nik'];
+        $_SESSION['name'] = $result['id'];
+        header("Location: http://test.webshops.club");}
+    else{
+        echo "<html><head><link href=\"/css/style.css\" rel=\"stylesheet\" type=\"text/css\"/>
+                        </head><body><div id=\"err\">РўР°РєРѕР№ Р»РѕРіРёРЅ СЃ РїР°СЂРѕР»РµРј РЅРµ РЅР°Р№РґРµРЅС‹. РђРІС‚РѕСЂРёР·СѓР№С‚РµСЃСЊ.<br/><br/>
+                          <a href=\"http://test.webshops.club/action/login.php\">Р’РµСЂРЅСѓС‚СЊСЃСЏ</a></div></body></html>";}}
+
+function get_user(){ //РІС‹РІРѕРґРёРј РґР°РЅРЅС‹Рµ Р°РІС‚РѕСЂРёР·РѕРІР°РЅРЅРѕРіРѕ РєР»РёРµРЅС‚Р°
+    connect_to_db();
+    $user = $_SESSION['name'];
+    $sql = "SELECT * FROM test WHERE id = '$user'";
+    $res = mysql_query($sql) or die("Upss");
+    $result = mysql_fetch_assoc($res);
+    echo("
         <table>
             <tr>
                 <td><img src = \"http://test.webshops.club/images/upload/".$result['file'].".jpg\"/></td>
                 <td>
                     <table>
                         <tr>
-                            <td> 
-                                ФИО:  
-                            </td>     
-                            <td> 
-                                ".$result['name']." 
+                            <td>
+                                Р¤РРћ:
+                            </td>
+                            <td>
+                                ".$result['name']."
                             </td>
                         </tr>
                         <tr>
-                            <td> 
-                                Дата рождения:  
-                            </td>     
-                            <td> 
+                            <td>
+                                Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ:
+                            </td>
+                            <td>
                                 ".$result['birth']."
                             </td>
                         </tr>
                         <tr>
-                            <td> 
-                                Страна:  
-                            </td>     
-                            <td> 
+                            <td>
+                                РЎС‚СЂР°РЅР°:
+                            </td>
+                            <td>
                                 ".$result['city']."
                             </td>
                         </tr>
                         <tr>
-                            <td> 
-                                Пол:  
-                            </td>     
-                            <td> 
+                            <td>
+                                РџРѕР»:
+                            </td>
+                            <td>
                                 ".$result['sex']."
                             </td>
-                        </tr>                        
-                    </table>      
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>
         <table>
             <tr>
-                <td> 
-                    Образование:  
+                <td>
+                    РћР±СЂР°Р·РѕРІР°РЅРёРµ:
                 </td>
-                <td> 
-                    ".htmlspecialchars_decode($result['education'])."  
+                <td>
+                    ".htmlspecialchars_decode($result['education'])."
                 </td>
             </tr>
             <tr>
-                <td> 
-                    Опыт работы:         
+                <td>
+                    РћРїС‹С‚ СЂР°Р±РѕС‚С‹:
                 </td>
-                <td> 
-                    ".htmlspecialchars_decode($result['experience'])."           
-                </td>                
-            </tr> 
+                <td>
+                    ".htmlspecialchars_decode($result['experience'])."
+                </td>
+            </tr>
             <tr>
-                <td>                           
-                    Контакты:
+                <td>
+                    РљРѕРЅС‚Р°РєС‚С‹:
                 </td>
-                <td>                           
+                <td>
                     ".htmlspecialchars_decode($result['contacts'])."
                 </td>
             </tr>
             <tr>
-                <td> 
-                    О себе:       
+                <td>
+                    Рћ СЃРµР±Рµ:
                 </td>
-                <td> 
-                    ".htmlspecialchars_decode($result['about'])."<br/>        
+                <td>
+                    ".htmlspecialchars_decode($result['about'])."<br/>
                 </td>
-            </tr>                        
-        </table>        
-        ");}  
+            </tr>
+        </table>
+        ");}
 ?>
